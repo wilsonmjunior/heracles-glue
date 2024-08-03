@@ -21,7 +21,9 @@ const Tabs = createBottomTabNavigator<IAppRoutes>();
 
 export function AppRoutes() {
     return (
-        <Tabs.Navigator screenOptions={{ headerShown: false }}>
+        <Tabs.Navigator
+            screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+        >
             <Tabs.Screen name="Home" component={Home} />
             <Tabs.Screen name="History" component={History} />
             <Tabs.Screen name="Profile" component={Profile} />
