@@ -50,7 +50,7 @@ export function Button({
                 <Text
                     color={variants[variant].color}
                     fontFamily="$heading"
-                    fontSize="$sm"
+                    fontSize="$md"
                 >
                     {title}
                 </Text>
