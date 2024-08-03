@@ -31,6 +31,7 @@ export function SignIn() {
 
                     <Center gap="$4">
                         <Heading color="$gray100">Acesse sua conta</Heading>
+
                         <Input
                             placeholder="E-mail"
                             keyboardType="email-address"
