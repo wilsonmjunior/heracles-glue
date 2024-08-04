@@ -1,7 +1,8 @@
-import { UserPhoto } from "@components/UserPhoto";
-import { CloseIcon, HStack, Icon, Text, VStack } from "@gluestack-ui/themed";
-import { LogOut } from "lucide-react-native";
 import { Pressable } from "react-native";
+import { HStack, Icon, Text, VStack } from "@gluestack-ui/themed";
+import { LogOut } from "lucide-react-native";
+
+import { UserPhoto } from "@components/UserPhoto";
 
 export function HomeHeader() {
     return (
