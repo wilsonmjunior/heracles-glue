@@ -1,3 +1,4 @@
+import { Platform } from "react-native";
 import {
     createBottomTabNavigator,
     BottomTabNavigationProp,
@@ -8,11 +9,10 @@ import HomeSvg from "@assets/home.svg";
 import ProfileSvg from "@assets/profile.svg";
 
 import { Exercise } from "@screens/Exercise";
-import { History } from "@screens/History";
 import { Home } from "@screens/Home";
+import { History } from "@screens/History";
 import { Profile } from "@screens/Profile";
 import { gluestackUIConfig } from "../../config/gluestack-ui.config";
-import { Platform } from "react-native";
 
 type IAppRoutes = {
     Exercise: undefined;

@@ -1,7 +1,6 @@
 import { Heading, HStack, Text, VStack } from "@gluestack-ui/themed";
 
-import { GroupList } from "./GroupList";
-import { HomeHeader } from "./HomeHeader";
+import { GroupList, HomeHeader } from "@components/screens/Home";
 
 export function Home() {
     return (
