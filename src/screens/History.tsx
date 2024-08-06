@@ -2,7 +2,8 @@ import { useState } from "react";
 import { SectionList } from "react-native";
 import { Heading, Text, VStack } from "@gluestack-ui/themed";
 
-import { HistoryCard, ScreenHeader } from "@components/screens/History";
+import { ScreenHeader } from "@components/ScreenHeader";
+import { HistoryCard } from "@components/screens/History";
 
 export function History() {
     const [exercises, setExercises] = useState([
@@ -18,7 +19,7 @@ export function History() {
 
     return (
         <VStack>
-            <ScreenHeader />
+            <ScreenHeader title="Histórico de Exercícios" />
 
             <SectionList
                 sections={exercises}
