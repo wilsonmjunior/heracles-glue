@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FlatList, Heading, HStack, Text, VStack } from "@gluestack-ui/themed";
+import { useNavigation } from "@react-navigation/native";
 
-import { ExerciseCard } from "@components/screens/Exercise";
-import { GroupList, HomeHeader } from "@components/screens/Home";
+import { ExerciseCard, GroupList, HomeHeader } from "@components/screens/Home";
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 export function Home() {
     const [exercises, setExercises] = useState([
@@ -18,6 +19,13 @@ export function Home() {
         "Cadeira flexora",
         "Mesa flexora",
     ]);
+
+    const navigation = useNavigation<AppNavigatorRoutesProps>();
+
+    function handleOpenExerciseDetails() {
+        navigation.navigate("Exercise");
+    }
+
     return (
         <VStack flex={1}>
             <HomeHeader />
@@ -35,7 +43,9 @@ export function Home() {
                 <FlatList
                     data={exercises}
                     keyExtractor={(item) => String(item)}
-                    renderItem={({ item }) => <ExerciseCard />}
+                    renderItem={({ item }) => (
+                        <ExerciseCard onPress={handleOpenExerciseDetails} />
+                    )}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ paddingBottom: 20 }}
                 />

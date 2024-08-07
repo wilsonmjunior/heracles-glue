@@ -1,1 +1,1 @@
-export { ExerciseCard } from "./ExerciseCard";
+export { ScreenHeader } from "./ScreenHeader";
