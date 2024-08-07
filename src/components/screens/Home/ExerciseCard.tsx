@@ -1,3 +1,4 @@
+import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import {
     Heading,
     HStack,
@@ -7,7 +8,6 @@ import {
     VStack,
 } from "@gluestack-ui/themed";
 import { ChevronRight } from "lucide-react-native";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
 export type ExerciseProps = TouchableOpacityProps;
 
