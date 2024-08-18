@@ -1,9 +1,12 @@
+import { ComponentProps } from "react";
 import { Center, Spinner } from "@gluestack-ui/themed";
 
-export function Loading() {
-    return (
-        <Center flex={1} bg="$gray700">
-            <Spinner />
-        </Center>
-    );
+type LoadingProps = ComponentProps<typeof Center>;
+
+export function Loading({ bg = "$gray700", ...props }: LoadingProps) {
+  return (
+    <Center flex={1} bg={bg} {...props}>
+      <Spinner color="$green700" />
+    </Center>
+  );
 }

@@ -1,22 +1,32 @@
-import { Avatar, AvatarFallbackText, AvatarImage } from "@gluestack-ui/themed";
 import { ComponentProps } from "react";
+import { Avatar, AvatarImage } from "@gluestack-ui/themed";
+import { Loading } from "./Loading";
 
 type UserPhotoProps = ComponentProps<typeof Avatar> & {
-    uri: string;
+  uri: string;
+  isLoading?: boolean;
 };
 
-export function UserPhoto({ uri, size = "lg", ...props }: UserPhotoProps) {
-    return (
-        <Avatar size={size} {...props}>
-            <AvatarFallbackText>Wilson Junior</AvatarFallbackText>
-            <AvatarImage
-                source={{
-                    uri,
-                }}
-                borderWidth="$2"
-                borderColor="$gray400"
-                alt="Imagem do usuário"
-            />
-        </Avatar>
-    );
+export function UserPhoto({
+  isLoading,
+  size = "lg",
+  uri,
+  ...props
+}: UserPhotoProps) {
+  return (
+    <Avatar size={size} bg="$gray600" {...props}>
+      {isLoading ? (
+        <Loading bgColor="transparent" />
+      ) : (
+        <AvatarImage
+          source={{
+            uri,
+          }}
+          borderWidth="$2"
+          borderColor="$gray400"
+          alt="Imagem do usuário"
+        />
+      )}
+    </Avatar>
+  );
 }
