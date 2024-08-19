@@ -18,6 +18,14 @@ type ToastShowProps = {
 export function useToast() {
   const toast = useGluestackToast();
 
+  const colorScheme = {
+    error: "$error300",
+    warning: "$warning300",
+    success: "$success300",
+    info: "$info300",
+    attention: "$gray300",
+  };
+
   return {
     ...toast,
     show: ({
@@ -32,9 +40,17 @@ export function useToast() {
         render({ id }) {
           const uniqueToastId = `toast-${id}`;
           return (
-            <Toast nativeID={uniqueToastId} action={action} variant="accent">
-              <ToastTitle>{title}</ToastTitle>
-              <ToastDescription>{description}</ToastDescription>
+            <Toast
+              nativeID={uniqueToastId}
+              action={action}
+              bgColor={colorScheme[action]}
+            >
+              <ToastTitle color="$white" fontFamily="$heading">
+                {title}
+              </ToastTitle>
+              <ToastDescription color="$white" fontFamily="$body">
+                {description}
+              </ToastDescription>
             </Toast>
           );
         },
