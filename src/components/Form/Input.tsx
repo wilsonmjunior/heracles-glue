@@ -1,10 +1,14 @@
-import { Controller, ControllerProps } from "react-hook-form";
+import { Controller, ControllerProps, FieldValues } from "react-hook-form";
 
 import { Input, InputProps } from "@components/Input";
 
-type InputFormProps = Omit<ControllerProps, "render"> & InputProps;
+export type InputFormProps<T extends FieldValues> = Omit<
+  ControllerProps<T>,
+  "render"
+> &
+  InputProps;
 
-export function InputForm({
+export function InputForm<T extends FieldValues>({
   control,
   defaultValue,
   disabled,
@@ -12,7 +16,7 @@ export function InputForm({
   rules,
   shouldUnregister,
   ...othersProps
-}: InputFormProps) {
+}: InputFormProps<T>) {
   return (
     <Controller
       control={control}
